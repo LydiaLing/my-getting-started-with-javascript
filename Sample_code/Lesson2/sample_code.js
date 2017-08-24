@@ -17,7 +17,7 @@ var xinshengUserName = 'xiaoming';
 var wechat_user_name = 'xiaoming';
 var locaitonBase = '北京';
 var company = locaitonBase + '新生大学';
-var myLikeColorsList = ['blue', 'green', 'black', 'write'];
+var myLikeColorsList = ['blue', 'green', 'black', 'white'];
 var myLikeFoods = ['刀削面', '拉面', '牛肉面', '杂酱面', '麻辣面', '烩面', '莜面'];
 
 //声明并定义对象变量
@@ -62,7 +62,7 @@ console.log('--------------------');
 console.log('\n');
 
 console.log('----我喜欢的食物----');
-//console.log('我总共喜欢 ' + myLikeFoods.length + ' 种食物');
+console.log('我总共喜欢 ' + myLikeFoods.length + ' 种食物');
 
 // for 循环
 for (var i = 0; i < myLikeFoods.length; i++) {
@@ -124,7 +124,7 @@ var xiaoming2 = {
   },
   like: {
     myLikeColorsList,
-   // myLikeFoods
+    myLikeFoods
   },
   work: {
     locaitonBase,
