@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+  <meta charset="UTF-8">
+  <title>新生大学</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+    crossorigin="anonymous">
+  <link rel="stylesheet" href="./public/style.css">
+  <script src="./public/vue.min.js"></script>
+</head>
+
+<body>
+  <div id="app">
+    <div class="main-header">
+      <div class="container">
+        <h1>JavaScript编程入门</h1>
+      </div>
+    </div>
+    <div class="container">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h3 class="panel-title">我的心里话</h3>
+          </div>
+          <div class="panel-body">
+            <div class="words-pannel" v-for="item in wordsList">
+              <div class="media">
+                <div class="media-left">
+                  <a href="#">
+                    <img class="media-object avatar" v-bind:src="item.avatar" alt="...">
+                  </a>
+                </div>
+                <div class="media-body">
+                  <h4 class="media-heading">
+                    {{ item.name }}
+                  </h4>
+                    {{ item.words }}
+                </div>
+              </div>
+            </div>
+          </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
+<script src="http://lib.sinaapp.com/js/jquery/1.9.1/jquery-1.9.1.min.js"></script>
+<script>
+  $(function(){
+    $.ajax({
+type:'get',
+url:'E:\13Javascript\myProject\my-getting-started-with-javascript\testCode\all_words.json',
+success: function(data){
+    if(data.msg == "succ"){
+        pushDom(data.data);
+    }else{
+        alert("服务器返回异常");
+    }
+},
+error: function(data){
+    alert(JSON.stringify(data));
+}
+});
+function pushDom(wordsList){
+var vm = new Vue({
+el: '#app',
+data: {
+//peps:data1
+wordsList: wordsList 
+}
+});
+}
+})
+  // vue官网： https://cn.vuejs.org/v2/guide/
+  // 初始化Vue
+
+  // 把收集的数据放在这里
+  //var jsonfile = require('jsonfile');
+  //var filePath ='E:\13Javascript\myProject\my-getting-started-with-javascript\testCode\all_words.json';
+  //var wordsList = jsonFile.readFileSync(filePath);
+ 
+  //new Vue({
+    //el: '#app',   // #app 和html中div#id的 app 对应
+   // data: {
+     // wordsList: wordsList  // 变量wordsList可以在html使用
+   // }
+  //});
+
+</script>

@@ -21,6 +21,7 @@ function callback(err, files) {
 
   if (files.length > 0) {
     console.log(files);
+    console.log(files.length);
   } else {
     console.log('没有找到任何文件');
   }
