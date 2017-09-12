@@ -28,7 +28,8 @@
 var fs = require('fs');
 
 // 定义要查询的目标文件夹。如果你想查lesson2的内容，就修改下面路径字符串。
-var dirPathString = '../../homework/lesson1';
+//var dirPathString = '../../homework/lesson1';
+var dirPathString='C:/Users/Lydia/Desktop/heju';
 
 // 定义一个callback函数，用于接收读取文件夹内容后的结果
 fs.readdir(dirPathString,function(errr,filess) {
@@ -38,7 +39,7 @@ fs.readdir(dirPathString,function(errr,filess) {
 
   if (filess.length > 0) {
     console.log(filess);
-    var filePathString = './lingxiaoAsync.txt';
+    var filePathString = './lxAsync.txt';
     var fileContent = filess;
     fs.writeFile(filePathString, fileContent, function(err) {
       if (err) {
